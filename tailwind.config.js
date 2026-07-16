@@ -25,6 +25,11 @@ export default {
           500: '#67764d', // Primary accent/text (olive green)
           600: '#515e3c',
           700: '#3e482f',
+          750: '#333b26', // Custom dark olive
+          800: '#2b3221', // Custom darker olive
+          850: '#22271a', // Custom even darker olive
+          900: '#191d13', // Custom deepest olive
+          950: '#0f110b', // Custom near black olive
           DEFAULT: '#67764d',
         }
       },

@@ -163,11 +163,11 @@ export default function Hero({ content }) {
                   <h3 className="text-base font-bold font-sans text-olive-500 dark:text-cream-200 flex items-center gap-2">
                     {title}
                   </h3>
-                  <p className="text-xs text-olive-500/70 dark:text-cream-200/60 mt-3 leading-relaxed font-sans">
+                  <p className="text-xs text-olive-500/80 dark:text-cream-100/90 mt-3 leading-relaxed font-sans">
                     {identitiesMap[title] || "Applying deep expertise across aligned computer science fields and software architecture environments."}
                   </p>
                 </div>
-                <div className="mt-4 pt-2 border-t border-olive-250/10 dark:border-cream-250/5 font-mono text-[8px] opacity-40 uppercase">
+                <div className="mt-4 pt-2 border-t border-olive-200/20 dark:border-cream-200/10 font-mono text-[8px] opacity-40 uppercase">
                   {isDev ? 'Engineering' : isRes ? 'Inquiry' : 'Alignment'}
                 </div>
               </div>
