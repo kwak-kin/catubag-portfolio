@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply transition-colors duration-300;
+  }
+
+  /* Custom scrollbar matching the color scheme */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-olive-300/30 dark:bg-cream-300/30 rounded;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-olive-500/50 dark:bg-cream-200/50;
+  }
+}
+
+@layer utilities {
+  /* Stark, grayscale, high-contrast image blending styles */
+  .stark-profile-img {
+    filter: grayscale(100%) contrast(150%) brightness(95%);
+    mix-blend-mode: multiply;
+  }
+  
+  .dark .stark-profile-img {
+    filter: grayscale(100%) contrast(135%) brightness(120%);
+    mix-blend-mode: screen;
+  }
+
+  /* Notion-style / Developer-doc Dot Grid Background */
+  .bg-dot-grid {
+    background-size: 16px 16px;
+    background-image: radial-gradient(circle, rgba(103, 118, 77, 0.15) 1px, transparent 1px);
+  }
+  
+  .dark .bg-dot-grid {
+    background-image: radial-gradient(circle, rgba(246, 238, 219, 0.08) 1px, transparent 1px);
+  }
+
+  /* Subtle retro scanline overlay for the photo */
+  .retro-overlay {
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.08) 50%
+    );
+    background-size: 100% 4px;
+  }
+
+  .dark .retro-overlay {
+    background: linear-gradient(
+      rgba(246, 238, 219, 0) 50%, 
+      rgba(246, 238, 219, 0.05) 50%
+    );
+    background-size: 100% 4px;
+  }
+}
+
+/* Print optimizations */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .no-print {
+    display: none;
+  }
+}
