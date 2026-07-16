@@ -9,7 +9,7 @@ export default function Experience({ content }) {
       
       {/* Section Header */}
       <div className="flex justify-between items-baseline mb-8 text-left">
-        <h3 className="font-mono text-xs text-olive-500/40 dark:text-cream-200/30 uppercase tracking-widest">
+        <h3 className="font-mono text-xs text-olive-500/45 dark:text-cream-200/35 uppercase tracking-widest">
           02 // Experience
         </h3>
         <span className="font-mono text-[10px] text-olive-500/40 dark:text-cream-200/30">
@@ -36,11 +36,11 @@ export default function Experience({ content }) {
               {/* Date & Location Columns (Span 4) */}
               <div className="md:col-span-4 space-y-1">
                 <span className="font-mono text-xs font-bold text-olive-500 dark:text-cream-200 flex items-center gap-1.5">
-                  <Calendar size={12} className="opacity-60" />
+                  <Calendar size={12} className="opacity-70" />
                   {exp.period}
                 </span>
-                <div className="text-[10px] font-mono text-olive-500/60 dark:text-cream-200/40 flex items-center gap-1.5">
-                  <MapPin size={10} className="opacity-60" />
+                <div className="text-[10px] font-mono text-olive-500/80 dark:text-cream-200/60 flex items-center gap-1.5">
+                  <MapPin size={10} className="opacity-75" />
                   {exp.location}
                 </div>
               </div>
@@ -50,17 +50,17 @@ export default function Experience({ content }) {
                 <div>
                   <h4 className="text-base font-bold text-olive-500 dark:text-cream-200 flex flex-wrap items-center gap-1.5 leading-tight">
                     {exp.role}
-                    <span className="text-xs font-mono font-normal opacity-50 px-2 py-0.5 border border-olive-200/40 dark:border-cream-200/10 rounded-sm bg-cream-100/40 dark:bg-olive-800/10">
+                    <span className="text-xs font-mono font-normal opacity-70 px-2 py-0.5 border border-olive-200/40 dark:border-cream-200/10 rounded-sm bg-cream-100/40 dark:bg-olive-800/10 text-olive-550 dark:text-cream-150">
                       @ {exp.company}
                     </span>
                   </h4>
                 </div>
 
                 {/* Bullets List */}
-                <ul className="space-y-1.5 text-sm text-olive-500/70 dark:text-cream-200/60 list-none">
+                <ul className="space-y-1.5 text-sm text-olive-500/90 dark:text-cream-100/90 list-none">
                   {exp.bullets && exp.bullets.map((bullet, bIdx) => (
                     <li key={bIdx} className="relative pl-4 leading-relaxed">
-                      <span className="absolute left-0 top-2 w-1.5 h-[1px] bg-olive-500/40 dark:bg-cream-200/30"></span>
+                      <span className="absolute left-0 top-2 w-1.5 h-[1px] bg-olive-500/50 dark:bg-cream-200/50"></span>
                       {bullet}
                     </li>
                   ))}

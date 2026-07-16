@@ -149,7 +149,7 @@ function MobileWireframe({ type }) {
           <span>12:30 PM</span>
           <div className="flex items-center gap-1">
             <span>5G</span>
-            <div className="w-4.5 h-2.5 border border-olive-500 dark:border-cream-200 p-0.5 flex"><div className="w-2.5 h-full bg-olive-500 dark:bg-cream-200"></div></div>
+            <div className="w-4.5 h-2.5 border border-olive-500 dark:border-cream-200/10 p-0.5 flex"><div className="w-2.5 h-full bg-olive-500 dark:bg-cream-200"></div></div>
           </div>
         </div>
 
@@ -253,11 +253,11 @@ function ProjectCard({ project, idx, onZoom }) {
       <div>
         {/* Category and Index */}
         <div className="flex justify-between items-baseline mb-2">
-          <span className="font-mono text-[10px] text-olive-500/50 dark:text-cream-200/40 uppercase tracking-widest flex items-center gap-1">
+          <span className="font-mono text-[10px] text-olive-500/60 dark:text-cream-200/50 uppercase tracking-widest flex items-center gap-1">
             <Layers size={10} />
             {project.tagline}
           </span>
-          <span className="font-mono text-[9px] text-olive-500/30 dark:text-cream-200/20">
+          <span className="font-mono text-[9px] text-olive-500/40 dark:text-cream-200/30">
             SYS.PROJ_0{idx + 1}
           </span>
         </div>
@@ -274,7 +274,7 @@ function ProjectCard({ project, idx, onZoom }) {
             {project.roles.map((role, rIdx) => (
               <span
                 key={rIdx}
-                className="text-[9px] font-mono px-1.5 py-0.5 border border-dashed border-olive-400/40 dark:border-cream-300/20 text-olive-500/60 dark:text-cream-200/50 rounded-sm"
+                className="text-[9px] font-mono px-1.5 py-0.5 border border-dashed border-olive-400/45 dark:border-cream-300/35 text-olive-500/85 dark:text-cream-250/90 rounded-sm"
               >
                 {role}
               </span>
@@ -283,15 +283,15 @@ function ProjectCard({ project, idx, onZoom }) {
         )}
 
         {/* Description */}
-        <p className="text-sm text-olive-500/80 dark:text-cream-200/70 font-sans mt-4 leading-relaxed">
+        <p className="text-sm text-olive-500/90 dark:text-cream-100/95 font-sans mt-4 leading-relaxed">
           {project.description}
         </p>
 
         {/* Project Achievements / Awards */}
         {project.achievements && project.achievements.map((ach, aIdx) => (
-          <div key={aIdx} className="mt-3 p-3 border border-olive-300/30 dark:border-cream-300/10 bg-cream-200/30 dark:bg-olive-850/20 rounded flex items-start gap-2 text-xs font-sans">
+          <div key={aIdx} className="mt-3 p-3 border border-olive-350/40 dark:border-cream-300/20 bg-cream-200/30 dark:bg-olive-850/20 rounded flex items-start gap-2 text-xs font-sans">
             <Award size={14} className="text-amber-600 dark:text-amber-400 mt-0.5 shrink-0" />
-            <span className="text-olive-500/85 dark:text-cream-200/80">{ach}</span>
+            <span className="text-olive-500/90 dark:text-cream-100/95">{ach}</span>
           </div>
         ))}
 
@@ -306,7 +306,7 @@ function ProjectCard({ project, idx, onZoom }) {
                 className={`py-2 px-3 flex items-center gap-1.5 border-b-2 transition-all ${
                   activeTab === 'web'
                     ? 'border-olive-500 text-olive-500 font-bold dark:border-cream-200 dark:text-cream-200'
-                    : 'border-transparent text-olive-500/50 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
+                    : 'border-transparent text-olive-500/60 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
                 }`}
               >
                 <Globe size={11} />
@@ -317,7 +317,7 @@ function ProjectCard({ project, idx, onZoom }) {
                 className={`py-2 px-3 flex items-center gap-1.5 border-b-2 transition-all ${
                   activeTab === 'mobile'
                     ? 'border-olive-500 text-olive-500 font-bold dark:border-cream-200 dark:text-cream-200'
-                    : 'border-transparent text-olive-500/50 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
+                    : 'border-transparent text-olive-500/60 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
                 }`}
               >
                 <Smartphone size={11} />
@@ -328,7 +328,7 @@ function ProjectCard({ project, idx, onZoom }) {
                 className={`py-2 px-3 flex items-center gap-1.5 border-b-2 transition-all ${
                   activeTab === 'amy'
                     ? 'border-olive-500 text-olive-500 font-bold dark:border-cream-200 dark:text-cream-200'
-                    : 'border-transparent text-olive-500/50 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
+                    : 'border-transparent text-olive-500/60 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
                 }`}
               >
                 <Award size={11} />
@@ -345,7 +345,7 @@ function ProjectCard({ project, idx, onZoom }) {
                 className={`py-2 px-4 flex items-center gap-1.5 border-b-2 transition-all ${
                   activeTab === 'video'
                     ? 'border-olive-500 text-olive-500 font-bold dark:border-cream-200 dark:text-cream-200'
-                    : 'border-transparent text-olive-500/50 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
+                    : 'border-transparent text-olive-500/60 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
                 }`}
               >
                 <Play size={11} />
@@ -356,7 +356,7 @@ function ProjectCard({ project, idx, onZoom }) {
                 className={`py-2 px-4 flex items-center gap-1.5 border-b-2 transition-all ${
                   activeTab === 'ircite'
                     ? 'border-olive-500 text-olive-500 font-bold dark:border-cream-200 dark:text-cream-200'
-                    : 'border-transparent text-olive-500/50 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
+                    : 'border-transparent text-olive-500/60 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
                 }`}
               >
                 <Presentation size={11} />
@@ -367,23 +367,23 @@ function ProjectCard({ project, idx, onZoom }) {
 
           {/* Platform Specific Description */}
           {getTabDescription() && (
-            <div className="text-[11px] leading-relaxed text-olive-500/75 dark:text-cream-200/60 font-sans border-l-2 border-olive-350/20 pl-3">
+            <div className="text-[11px] leading-relaxed text-olive-550 dark:text-cream-200/85 font-sans border-l-2 border-olive-350/40 pl-3">
               {getTabDescription()}
             </div>
           )}
 
           {/* Media Slider (When not in video demo tab) */}
           {activeTab !== 'video' && currentMedia.length > 0 && (
-            <div className="border border-olive-200/40 dark:border-cream-200/10 rounded overflow-hidden bg-cream-200/20 dark:bg-olive-900/10 p-3 space-y-4">
+            <div className="border border-olive-200/45 dark:border-cream-200/15 rounded overflow-hidden bg-cream-200/20 dark:bg-olive-900/15 p-3 space-y-4">
               
               {/* Display Viewport */}
-              <div className="flex justify-center items-center py-2 bg-cream-200/40 dark:bg-olive-900/25 border border-olive-200/20 dark:border-cream-200/5 rounded">
+              <div className="flex justify-center items-center py-2 bg-cream-200/40 dark:bg-olive-900/30 border border-olive-200/20 dark:border-cream-200/5 rounded">
                 
                 {layoutType === 'landscape' && (
                   // Landscape aspect-video (strictly uniform)
                   <div
                     onClick={() => onZoom(currentMedia, activeSlide, 'landscape')}
-                    className="relative aspect-video w-full max-w-xl overflow-hidden bg-cream-200/80 dark:bg-olive-900/40 border border-olive-300/30 dark:border-cream-300/10 rounded-sm cursor-zoom-in group/slide shadow-sm"
+                    className="relative aspect-video w-full max-w-xl overflow-hidden bg-cream-200/80 dark:bg-olive-900/40 border border-olive-300/35 dark:border-cream-300/15 rounded-sm cursor-zoom-in group/slide shadow-sm"
                   >
                     {!imgErrors[activeSlide] ? (
                       <img
@@ -393,9 +393,9 @@ function ProjectCard({ project, idx, onZoom }) {
                         className="w-full h-full object-cover transition-transform duration-300 group-hover/slide:scale-101.5"
                       />
                     ) : (
-                      <div className="p-4 text-center font-mono text-[9px] text-olive-500/50 dark:text-cream-200/35 flex flex-col justify-center h-full">
+                      <div className="p-4 text-center font-mono text-[9px] text-olive-500/60 dark:text-cream-200/45 flex flex-col justify-center h-full">
                         <div>SNAP_0{activeSlide + 1}</div>
-                        <div className="opacity-70 mt-1">{currentMedia[activeSlide].caption}</div>
+                        <div className="opacity-80 mt-1">{currentMedia[activeSlide].caption}</div>
                       </div>
                     )}
                     
@@ -479,22 +479,22 @@ function ProjectCard({ project, idx, onZoom }) {
                 )}
 
                 {layoutType === 'square' && (
-                  // Square viewport for social media post snaps
+                  // Square viewport for social media post snaps - object-contain ensures NO text is cut off
                   <div
                     onClick={() => onZoom(currentMedia, activeSlide, 'square')}
-                    className="relative aspect-square w-64 md:w-72 overflow-hidden bg-cream-200/80 dark:bg-olive-900/40 border border-olive-300/30 dark:border-cream-300/10 rounded-sm cursor-zoom-in group/slide shadow-md"
+                    className="relative aspect-square w-64 md:w-72 overflow-hidden bg-cream-200/95 dark:bg-olive-850 border border-olive-300/35 dark:border-cream-300/15 rounded-sm cursor-zoom-in group/slide shadow-md flex items-center justify-center p-2"
                   >
                     {!imgErrors[activeSlide] ? (
                       <img
                         src={currentMedia[activeSlide].url}
                         alt={`${project.title} Social Snap ${activeSlide + 1}`}
                         onError={() => handleImgError(activeSlide)}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover/slide:scale-101.5"
+                        className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover/slide:scale-101"
                       />
                     ) : (
-                      <div className="p-4 text-center font-mono text-[9px] text-olive-500/50 dark:text-cream-200/35 flex flex-col justify-center h-full">
+                      <div className="p-4 text-center font-mono text-[9px] text-olive-500/60 dark:text-cream-200/45 flex flex-col justify-center h-full">
                         <div>SNAP_0{activeSlide + 1}</div>
-                        <div className="opacity-70 mt-1">{currentMedia[activeSlide].caption}</div>
+                        <div className="opacity-80 mt-1">{currentMedia[activeSlide].caption}</div>
                       </div>
                     )}
                     
@@ -506,14 +506,14 @@ function ProjectCard({ project, idx, onZoom }) {
                     <div className="absolute inset-y-0 top-1/2 -translate-y-1/2 flex justify-between px-2 w-full z-20 pointer-events-none">
                       <button
                         onClick={prevSlide}
-                        className="p-1 rounded border border-olive-500/30 dark:border-cream-200/10 bg-cream-200/80 dark:bg-olive-750/90 text-olive-500 dark:text-cream-200 hover:bg-olive-500 hover:text-cream-200 dark:hover:bg-cream-200 dark:hover:text-olive-550 transition-colors pointer-events-auto shadow-sm"
+                        className="p-1 rounded border border-olive-500/30 dark:border-cream-200/10 bg-cream-200/85 dark:bg-olive-750/90 text-olive-500 dark:text-cream-200 hover:bg-olive-500 hover:text-cream-200 dark:hover:bg-cream-200 dark:hover:text-olive-550 transition-colors pointer-events-auto shadow-sm cursor-pointer"
                         title="Previous"
                       >
                         <ChevronLeft size={16} />
                       </button>
                       <button
                         onClick={nextSlide}
-                        className="p-1 rounded border border-olive-500/30 dark:border-cream-200/10 bg-cream-200/80 dark:bg-olive-750/90 text-olive-500 dark:text-cream-200 hover:bg-olive-500 hover:text-cream-200 dark:hover:bg-cream-200 dark:hover:text-olive-550 transition-colors pointer-events-auto shadow-sm"
+                        className="p-1 rounded border border-olive-500/30 dark:border-cream-200/10 bg-cream-200/85 dark:bg-olive-750/90 text-olive-500 dark:text-cream-200 hover:bg-olive-500 hover:text-cream-200 dark:hover:bg-cream-200 dark:hover:text-olive-550 transition-colors pointer-events-auto shadow-sm cursor-pointer"
                         title="Next"
                       >
                         <ChevronRight size={16} />
@@ -529,12 +529,12 @@ function ProjectCard({ project, idx, onZoom }) {
               </div>
 
               {/* Caption & Explanation */}
-              <div className="p-3 border border-olive-200/30 dark:border-cream-200/5 bg-cream-200/40 dark:bg-olive-850/15 rounded text-left">
-                <div className="font-mono text-[10px] font-bold text-olive-500 dark:text-cream-200 uppercase tracking-wider mb-1 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-olive-400 dark:bg-cream-300"></span>
+              <div className="p-3 border border-olive-200/35 dark:border-cream-200/10 bg-cream-250/50 dark:bg-olive-850/40 rounded text-left">
+                <div className="font-mono text-[10px] font-bold text-olive-555 dark:text-cream-100 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-olive-500 dark:bg-cream-200"></span>
                   {currentMedia[activeSlide].caption}
                 </div>
-                <p className="text-xs text-olive-500/80 dark:text-cream-200/70 font-sans leading-relaxed">
+                <p className="text-xs text-olive-500/90 dark:text-cream-200/95 font-sans leading-relaxed">
                   {currentMedia[activeSlide].description}
                 </p>
               </div>
@@ -557,7 +557,7 @@ function ProjectCard({ project, idx, onZoom }) {
                       <img
                         src={slide.url}
                         alt={`Thumbnail ${sIdx + 1}`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain p-0.5 bg-cream-200/70 dark:bg-olive-800"
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center bg-olive-500/10 dark:bg-cream-200/10 text-[6px] font-mono text-olive-500/60 dark:text-cream-200/60">
@@ -587,15 +587,15 @@ function ProjectCard({ project, idx, onZoom }) {
 
           {/* Publication Info */}
           {project.mediaType === 'publication' && project.doi && (
-            <div className="border border-dashed border-olive-300/40 dark:border-cream-300/20 bg-cream-200/25 dark:bg-olive-900/10 p-4 rounded font-mono text-xs space-y-2">
+            <div className="border border-dashed border-olive-350/40 dark:border-cream-300/20 bg-cream-200/25 dark:bg-olive-900/10 p-4 rounded font-mono text-xs space-y-2">
               <div className="flex justify-between items-center text-[10px] text-olive-500/50 dark:text-cream-200/40">
                 <span className="flex items-center gap-1"><BookOpen size={12} /> ACADEMIC PUBLICATION</span>
                 <span>DOI RESOLVER</span>
               </div>
-              <div className="text-olive-500/80 dark:text-cream-200/70 py-1 select-all">
+              <div className="text-olive-500/90 dark:text-cream-100/95 py-1 select-all font-semibold">
                 doi.org/{project.doi}
               </div>
-              <div className="text-[9px] text-olive-500/45 dark:text-cream-200/35">
+              <div className="text-[9px] text-olive-500/50 dark:text-cream-200/45">
                 Indexed under International Journal of Advanced Multidisciplinary Research (IJAMR).
               </div>
             </div>
@@ -612,7 +612,7 @@ function ProjectCard({ project, idx, onZoom }) {
           {project.stack && project.stack.map((tech, tIdx) => (
             <span
               key={tIdx}
-              className="font-mono text-[9px] px-2 py-0.5 border border-olive-200/30 dark:border-cream-200/10 rounded bg-cream-200/40 dark:bg-olive-700/20 text-olive-500/70 dark:text-cream-200/50"
+              className="font-mono text-[9px] px-2 py-0.5 border border-olive-200/30 dark:border-cream-200/10 rounded bg-cream-200/40 dark:bg-olive-700/20 text-olive-500/90 dark:text-cream-100/90"
             >
               {tech}
             </span>
@@ -653,7 +653,7 @@ export default function Projects({ content, onZoom }) {
       
       {/* Section Header */}
       <div className="flex justify-between items-baseline mb-8 text-left">
-        <h3 className="font-mono text-xs text-olive-500/40 dark:text-cream-200/30 uppercase tracking-widest">
+        <h3 className="font-mono text-xs text-olive-500/45 dark:text-cream-200/35 uppercase tracking-widest">
           03 // Projects
         </h3>
         <span className="font-mono text-[10px] text-olive-500/40 dark:text-cream-200/30">

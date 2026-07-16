@@ -186,7 +186,7 @@ export default function App() {
             </button>
 
             {/* Slide Index Counter Badge */}
-            <div className="absolute top-2 left-2 px-2 py-0.5 rounded font-mono text-[8px] bg-olive-500/90 text-cream-200 dark:bg-cream-200 dark:text-olive-505 font-bold">
+            <div className="absolute top-2 left-2 px-2 py-0.5 rounded font-mono text-[8px] bg-olive-500/90 text-cream-200 dark:bg-cream-200 dark:text-olive-500 font-bold">
               {String(lightbox.index + 1).padStart(2, '0')} / {String(lightbox.items.length).padStart(2, '0')}
             </div>
 
@@ -198,13 +198,15 @@ export default function App() {
                   lightbox.layoutType === 'portrait'
                     ? 'w-64 h-[400px] md:w-72 md:h-[480px]'
                     : lightbox.layoutType === 'square'
-                    ? 'w-72 h-72 sm:w-85 sm:h-85 md:w-96 md:h-96 aspect-square'
+                    ? 'w-72 h-72 sm:w-85 sm:h-85 md:w-96 md:h-96 aspect-square bg-cream-100 dark:bg-olive-850 p-3'
                     : 'max-w-full max-h-[55vh] aspect-video'
                 }`}>
                   <img
                     src={activeItem.url}
                     alt={activeItem.caption}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${
+                      lightbox.layoutType === 'square' ? 'object-contain' : 'object-cover'
+                    }`}
                   />
                 </div>
               ) : (
@@ -216,11 +218,11 @@ export default function App() {
 
               {/* Text Caption details */}
               <div className="text-left w-full border-t border-olive-200/30 dark:border-cream-200/10 pt-4 mt-2 max-w-xl">
-                <h5 className="font-mono text-xs font-bold text-olive-500 dark:text-cream-200 uppercase tracking-wide flex items-center gap-1.5">
+                <h5 className="font-mono text-xs font-bold text-olive-500 dark:text-cream-100 uppercase tracking-wide flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                   {activeItem.caption}
                 </h5>
-                <p className="text-xs text-olive-500/80 dark:text-cream-200/70 font-sans mt-2 leading-relaxed">
+                <p className="text-xs text-olive-500/90 dark:text-cream-200/95 font-sans mt-2 leading-relaxed">
                   {activeItem.description}
                 </p>
               </div>
