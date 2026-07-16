@@ -274,7 +274,7 @@ function ProjectCard({ project, idx, onZoom }) {
             {project.roles.map((role, rIdx) => (
               <span
                 key={rIdx}
-                className="text-[9px] font-mono px-1.5 py-0.5 border border-dashed border-olive-400/45 dark:border-cream-300/35 text-olive-500/85 dark:text-cream-250/90 rounded-sm"
+                className="text-[9px] font-mono px-1.5 py-0.5 border border-dashed border-olive-400/45 dark:border-cream-300/35 text-olive-500/85 dark:text-cream-200/90 rounded-sm"
               >
                 {role}
               </span>
@@ -529,8 +529,8 @@ function ProjectCard({ project, idx, onZoom }) {
               </div>
 
               {/* Caption & Explanation */}
-              <div className="p-3 border border-olive-200/35 dark:border-cream-200/10 bg-cream-250/50 dark:bg-olive-850/40 rounded text-left">
-                <div className="font-mono text-[10px] font-bold text-olive-555 dark:text-cream-100 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+              <div className="p-3 border border-olive-200/35 dark:border-cream-200/10 bg-cream-100/60 dark:bg-olive-850/40 rounded text-left">
+                <div className="font-mono text-[10px] font-bold text-olive-500 dark:text-cream-100 uppercase tracking-wider mb-1 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-olive-500 dark:bg-cream-200"></span>
                   {currentMedia[activeSlide].caption}
                 </div>
