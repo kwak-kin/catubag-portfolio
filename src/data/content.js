@@ -1,4 +1,4 @@
-import profilePic from '../assets/pic.JPG';
+import profilePic from '../assets/pict.jpg';
 
 // Import Enervisio Web Snaps sequentially
 import en1 from '../assets/Enervisio/web/EN1.png';
@@ -21,7 +21,7 @@ import amyNu from '../assets/AMY2025/AMYNU.jpg';
 import ircite1 from '../assets/IRCITE/IRCITE1.jpg';
 import ircite2 from '../assets/IRCITE/IRCITE2.jpg';
 import ircite3 from '../assets/IRCITE/IRCITE3.jpg';
-import ircite5 from '../assets/IRCITE/IRCITE5.jpg';
+import ircite4 from '../assets/IRCITE/IRCITE4.jpg';
 
 // Import AWS Workshop snaps
 import aws1 from '../assets/AWSWorkshop/AWS1.jpg';
@@ -42,10 +42,10 @@ import lit4 from '../assets/LITWorkshop/LIT4.jpg';
 export const portfolioData = {
   personal: {
     name: "Joaquin Lorenzo Catubag",
-    titles: ["Full-Stack Developer", "Researcher", "AI Trainer/Annotator"],
+    titles: ["Full-Stack Software Engineer", "Researcher", "AI Trainer & Annotator"],
     subtitles: ["Magna Cum Laude", "Student Leader"],
-    headline: "Pioneering technology through software engineering, cloud leadership, and systems research.",
-    location: "Baliwag, Bulacan, Philippines",
+    headline: "Designing scalable software architectures, managing technical projects, and pioneering full-stack, AI, and systems research.",
+    location: "Matangtubig, Baliwag, Bulacan",
     email: "jolocatubag323@gmail.com",
     linkedin: "[https://www.linkedin.com/in/joaquin-catubag/](https://www.linkedin.com/in/joaquin-catubag/)",
     github: "[https://github.com/kwak-kin](https://github.com/kwak-kin)",
@@ -58,14 +58,14 @@ export const portfolioData = {
       honors: ["Magna Cum Laude (Latin Honors)", "Doña Miguela M. Jhocson Blue Scholar"]
     }
   },
-  
+
   // Showcase Projects with distinct, flexible media formats
   projects: [
     {
       id: "enervisio-ai",
       title: "Enervisio AI",
       tagline: "Smart Socket with AI-Driven Energy Monitoring",
-      roles: ["Full-Stack Developer", "System Architect", "Project Manager", "Researcher"],
+      roles: ["Full-Stack Software Engineer", "System Architect", "Project Manager", "Researcher"],
       description: "Built a comprehensive web, mobile, and IoT energy monitoring system integrating ESP32 smart socket hardware. Developed real-time monitoring, energy cost estimation, AI-driven insights, RBAC, and export/reporting workflows.",
       webDescription: "A central administration web dashboard strictly for Electroline Corporation (ELCOR) usage. It handles manual Meralco rate updates, user dissemination control (RBAC), and monitors employee audit logs and faulty socket logs.",
       mobileDescription: "A consumer companion mobile app that pairs with IoT smart sockets, enabling end-users to toggle device power, track active energy consumption (in kWh and PHP), and interact with an AI conservation coach.",
@@ -82,7 +82,7 @@ export const portfolioData = {
         {
           url: en2,
           caption: "Account Creation Workflow (Admin)",
-          description: "Since developers seed initial credentials, admins can invite other users. Provides clear entry forms to assign ELCOR employee levels."
+          description: "The developers seed the initial credentials and can therefore give admin accounts to employees who are given the task. Afterwards, these admins can administer staff accounts that have lesser role accessibility but are necessary to keep operations"
         },
         {
           url: en3,
@@ -153,12 +153,12 @@ export const portfolioData = {
       amyMedia: [
         {
           url: amyLit,
-          caption: "AMY Innovation Awards 2025 Presentation Panel",
-          description: "Pitching the Enervisio AI architecture, hardware components, and cloud security features before the adjudicating committee."
+          caption: "NU Literates Congratulatory post",
+          description: "The official finalist delegation representing National University - Baliwag during the AMY Innovation Awards 2025 ceremony."
         },
         {
           url: amyNu,
-          caption: "Award Finalist NU Baliwag Delegation",
+          caption: "NU Baliwag Congratulatory post",
           description: "The official finalist delegation representing National University - Baliwag during the AMY Innovation Awards 2025 ceremony."
         }
       ]
@@ -167,7 +167,7 @@ export const portfolioData = {
       id: "tatak-pancho",
       title: "Serbisyong Tatak Pancho Scholarship System",
       tagline: "Online Scholarship Management Platform",
-      roles: ["Full-Stack Developer", "Researcher"],
+      roles: ["Full-Stack Software Engineer", "Researcher"],
       description: "Developed an end-to-end online scholarship application system featuring document screening, automated email/SMS notifications, admin analytics reporting, and disbursement scheduling. Presented at IRCITE 2025.",
       stack: ["PHP", "MariaDB", "MySQL", "Bootstrap"],
       mediaType: "video",
@@ -175,7 +175,7 @@ export const portfolioData = {
       links: [
         { label: "Presentation", url: "[https://www.youtube.com/watch?v=QRbE560AfDI](https://www.youtube.com/watch?v=QRbE560AfDI)" }
       ],
-      irciteDescription: "Research dissemination slides from IRCITE 2025, where the Serbisyong Tatak Pancho Scholarship Management Platform's core systems, algorithms, and deployment findings were formally defended.",
+      irciteDescription: "Research dissemination slides from IRCITE 2025, where the Serbisyong Tatak Pancho Scholarship Management Platform's core systems, algorithms, and deployment findings were formally presented.",
       irciteMedia: [
         {
           url: ircite1,
@@ -184,18 +184,18 @@ export const portfolioData = {
         },
         {
           url: ircite2,
-          caption: "Panel Q&A Session Defense",
-          description: "Addressing peer evaluations regarding role-based security systems and SMS notifications integration."
+          caption: "Evaluation Results Presentation",
+          description: "Presenting the results of user evaluations using ISO/IEC standards."
         },
         {
           url: ircite3,
-          caption: "Research Dissemination Forum",
-          description: "Engaging in networking and sharing findings with national scholars and IT researchers at IRCITE 2025."
+          caption: "Evaluation Results Presentation",
+          description: "Presenting the results of user evaluations using ISO/IEC standards."
         },
         {
-          url: ircite5,
-          caption: "Certificate of Presentation Awarding",
-          description: "Receiving the official certificate of presentation at the closing plenary of IRCITE 2025."
+          url: ircite4,
+          caption: "The representatives of IRCITE 2025 from NU Baliwag",
+          description: "Representing BSIT-MWA"
         }
       ]
     },
@@ -203,7 +203,7 @@ export const portfolioData = {
       id: "angels-and-lemons",
       title: "Angels and Lemons' E-Ordering Website",
       tagline: "Web-Based Pickup Ordering System",
-      roles: ["Developer", "Researcher"],
+      roles: ["Software Engineer", "Researcher"],
       description: "Developed a secure web-based pickup ordering system containing standard carting flows, simulated mock e-wallet transactions, and dynamic daily business reports.",
       stack: ["PHP", "MySQL", "Bootstrap"],
       mediaType: "publication",
@@ -223,7 +223,7 @@ export const portfolioData = {
       bullets: [
         "Conduct comprehensive evaluations of AI-generated outputs across various modalities, ensuring prompt adherence and factual correctness.",
         "Analyze model responses to determine their effectiveness in meeting user intent and providing meaningful results.",
-        "Complete English, Tagalog, and bilingual Tagalog-English annotation tasks, applying language-specific and cultural judgment for localized AI evaluation.",
+        "Complete bilingual annotation tasks, leveraging cultural nuances to enhance localized AI evaluation.",
         "Review code across multiple programming languages, ensuring technical accuracy and practical utility for end-users."
       ]
     },
@@ -233,20 +233,20 @@ export const portfolioData = {
       period: "March 2026 - May 2026",
       location: "Remote",
       bullets: [
-        "Contributed to an e-commerce platform using Laravel 11, Livewire, MySQL, GitHub, Docker, and SMTP email verification.",
+        "Contributed to multiple e-commerce platforms using React, Laravel 11, PostgreSQL, GitHub, Docker, and SMTP email verification.",
+        "Guided AI coding agents through high-level architectural prompting to implement robust role-based access control and seamless transaction processes.",
         "Designed and optimized critical components like the homepage, shopping cart, and admin management workflows.",
-        "Enhanced security and user experience through improved role-based access control and seamless transaction processes.",
         "Documented development processes to facilitate team understanding and future enhancements."
       ]
     },
     {
       company: "Philippine Batteries Incorporated / Motolite",
-      role: "IT Developer Intern (500 Hours)",
+      role: "IT Developer Intern – Plant Engineering & Plant Maintenance Department (500 Hours)",
       period: "Nov 2025 - Feb 2026",
       location: "Sta. Maria, Bulacan",
       bullets: [
-        "Developed a standalone Condition-Based Maintenance System designed to digitize maintenance planning, equipment tracking, attendance logs, and reporting workflows.",
-        "Built core modules using PHP, MariaDB/MySQL, and Bootstrap, including personnel management, equipment records, preventive maintenance scheduling, and condition-based maintenance monitoring.",
+        "Engineered a standalone Condition-Based Maintenance System utilizing a pure PHP and MariaDB stack.",
+        "Utilized developer AI tools to accelerate the coding of essential modules for equipment tracking and maintenance scheduling.",
         "Automated data reporting and attendance calculations, significantly improving operational efficiency.",
         "Created detailed documentation to support ongoing development and team comprehension of the system."
       ]
@@ -296,13 +296,13 @@ export const portfolioData = {
       date: "February 2025",
       description: "Conducted a hands-on session on Visual Studio and GitHub fundamentals, guiding students through repository controls.",
       media: [
-        { url: aws1, caption: "Introduction to IDEs Lecture" },
-        { url: aws2, caption: "Setting up GitHub Profiles" },
-        { url: aws3, caption: "Hands-on Repository Initialization" },
-        { url: aws4, caption: "Resolving Merge Conflict Exercises" },
-        { url: aws5, caption: "Student Engagement & Code Reviews" },
-        { url: aws6, caption: "Explaining Branching Architecture" },
-        { url: aws7, caption: "AWS Cloud Club NU Baliwag Group Shot" }
+        { url: aws1, caption: "AWS Cloud Club NU Baliwag Group Shot" },
+        { url: aws2, caption: "Unlocking VS Code and GitHub" },
+        { url: aws3, caption: "Why does learning these matter?" },
+        { url: aws4, caption: "Introduction to IDEs Lecture" },
+        { url: aws5, caption: "Setting up GitHub accounts" },
+        { url: aws6, caption: "Personally guiding participants" },
+        { url: aws7, caption: "Introduction to IDEs Lecture" }
       ]
     },
     {
@@ -321,10 +321,11 @@ export const portfolioData = {
   ],
 
   skills: {
+    ai_assisted_dev: ["Agentic Workflows", "Advanced Prompt Engineering", "Google Antigravity", "Claude Code", "OpenAI Codex"],
     ai_training: ["LLM evaluation", "prompt writing", "response ranking", "instruction-following assessment", "SFT/RLHF task familiarity", "bilingual Tagalog-English annotation", "multimodal annotation", "AI coding evaluation", "data labeling", "quality validation"],
     languages: ["Filipino/Tagalog (Native)", "English (C2 Proficient)"],
-    programming: ["PHP", "JavaScript", "HTML", "CSS", "Laravel", "Livewire", "React.js", "Flutter", "Node.js", "Express.js", "Bootstrap", "Tailwind CSS"],
+    programming: ["Software Architecture", "PHP", "JavaScript", "HTML", "CSS", "Laravel", "Livewire", "React.js", "Flutter", "Node.js", "Express.js", "Bootstrap", "Tailwind CSS"],
     databases_cloud: ["MySQL", "MariaDB", "Firebase Firestore", "PostgreSQL", "AWS", "Docker"],
-    tools: ["Git", "GitHub", "VS Code", "Cursor", "GitHub Copilot", "XAMPP", "Figma", "Trello", "Notion"]
+    tools: ["Technical Project Management", "Git", "GitHub", "VS Code", "Cursor", "GitHub Copilot", "XAMPP", "Figma", "Trello", "Notion"]
   }
 };

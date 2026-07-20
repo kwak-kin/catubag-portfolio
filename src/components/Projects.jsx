@@ -234,7 +234,7 @@ function ProjectCard({ project, idx, onZoom }) {
     if (activeTab === 'mobile') return project.mobileDescription;
     if (activeTab === 'amy') return project.amyDescription;
     if (activeTab === 'ircite') return project.irciteDescription;
-    return project.description;
+    return null;
   };
 
   // Layout mode logic
