@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Github, ExternalLink, Terminal, Play, BookOpen, Layers, Award, ChevronLeft, ChevronRight, Smartphone, Globe, Eye, Zap, Presentation } from 'lucide-react';
+import ZoomableImage from './ZoomableImage';
 
 const cleanLink = (url) => {
   if (!url) return '';
@@ -187,7 +188,7 @@ function MobileWireframe({ type }) {
 
 function ProjectCard({ project, idx, onZoom }) {
   const [activeTab, setActiveTab] = useState(() => {
-    if (project.id === 'enervisio-ai') return 'web';
+    if (project.id === 'enervisio-ai') return 'video';
     if (project.id === 'tatak-pancho') return 'video';
     return '';
   });
@@ -209,6 +210,7 @@ function ProjectCard({ project, idx, onZoom }) {
   const getMediaList = () => {
     if (activeTab === 'web') return project.webMedia || [];
     if (activeTab === 'mobile') return project.mobileMedia || [];
+    if (activeTab === 'manual') return project.manualMedia || [];
     if (activeTab === 'amy') return project.amyMedia || [];
     if (activeTab === 'ircite') return project.irciteMedia || [];
     return [];
@@ -240,6 +242,7 @@ function ProjectCard({ project, idx, onZoom }) {
   // Layout mode logic
   const getLayoutType = () => {
     if (activeTab === 'mobile') return 'portrait';
+    if (activeTab === 'manual') return 'manual';
     if (activeTab === 'amy' || activeTab === 'ircite') return 'square';
     return 'landscape'; // 'web' uses landscape
   };
@@ -298,9 +301,31 @@ function ProjectCard({ project, idx, onZoom }) {
         {/* Media Rendering Block */}
         <div className="mt-6 space-y-4">
           
-          {/* Tab Selection Header for Enervisio (Web/Mobile/AMY) */}
+          {/* Tab Selection Header for Enervisio */}
           {project.id === 'enervisio-ai' && (
             <div className="flex flex-wrap border-b border-olive-200/30 dark:border-cream-200/10 font-mono text-[10px]">
+              <button
+                onClick={() => setActiveTab('video')}
+                className={`py-2 px-3 flex items-center gap-1.5 border-b-2 transition-all ${
+                  activeTab === 'video'
+                    ? 'border-olive-500 text-olive-500 font-bold dark:border-cream-200 dark:text-cream-200'
+                    : 'border-transparent text-olive-500/60 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
+                }`}
+              >
+                <Play size={11} />
+                Video Demo
+              </button>
+              <button
+                onClick={() => setActiveTab('manual')}
+                className={`py-2 px-3 flex items-center gap-1.5 border-b-2 transition-all ${
+                  activeTab === 'manual'
+                    ? 'border-olive-500 text-olive-500 font-bold dark:border-cream-200 dark:text-cream-200'
+                    : 'border-transparent text-olive-500/60 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
+                }`}
+              >
+                <Smartphone size={11} />
+                Enervisio Manual
+              </button>
               <button
                 onClick={() => setActiveTab('web')}
                 className={`py-2 px-3 flex items-center gap-1.5 border-b-2 transition-all ${
@@ -313,17 +338,6 @@ function ProjectCard({ project, idx, onZoom }) {
                 Web Dashboard
               </button>
               <button
-                onClick={() => setActiveTab('mobile')}
-                className={`py-2 px-3 flex items-center gap-1.5 border-b-2 transition-all ${
-                  activeTab === 'mobile'
-                    ? 'border-olive-500 text-olive-500 font-bold dark:border-cream-200 dark:text-cream-200'
-                    : 'border-transparent text-olive-500/60 dark:text-cream-200/40 hover:text-olive-500 dark:hover:text-cream-200'
-                }`}
-              >
-                <Smartphone size={11} />
-                Mobile App
-              </button>
-              <button
                 onClick={() => setActiveTab('amy')}
                 className={`py-2 px-3 flex items-center gap-1.5 border-b-2 transition-all ${
                   activeTab === 'amy'
@@ -332,7 +346,7 @@ function ProjectCard({ project, idx, onZoom }) {
                 }`}
               >
                 <Award size={11} />
-                AMY Awards 2025
+                AMY 2025
               </button>
             </div>
           )}
@@ -367,8 +381,16 @@ function ProjectCard({ project, idx, onZoom }) {
 
           {/* Platform Specific Description */}
           {getTabDescription() && (
-            <div className="text-[11px] leading-relaxed text-olive-550 dark:text-cream-200/85 font-sans border-l-2 border-olive-350/40 pl-3">
-              {getTabDescription()}
+            <div className="space-y-3">
+              {activeTab === 'web' && project.id === 'enervisio-ai' && (
+                <div className="text-[10px] font-mono border border-amber-500/30 dark:border-amber-400/20 bg-amber-500/10 dark:bg-amber-400/5 text-amber-600 dark:text-amber-400 px-3 py-2 rounded flex items-center gap-2">
+                  <Zap size={12} className="shrink-0 animate-pulse" />
+                  <span>DISCLAIMER: The data in these screenshots are dummy representations of admin actions and do not reflect official production/dashboard records.</span>
+                </div>
+              )}
+              <div className="text-[11px] leading-relaxed text-olive-550 dark:text-cream-200/85 font-sans border-l-2 border-olive-350/40 pl-3">
+                {getTabDescription()}
+              </div>
             </div>
           )}
 
@@ -478,6 +500,52 @@ function ProjectCard({ project, idx, onZoom }) {
                   </div>
                 )}
 
+                {layoutType === 'manual' && (
+                  // Manual layout: uncropped, fitting the container perfectly, zoomable
+                  <div
+                    onClick={() => onZoom(currentMedia, activeSlide, 'manual')}
+                    className="relative w-64 h-[380px] md:w-72 md:h-[450px] overflow-hidden bg-cream-100 dark:bg-olive-900 border border-olive-350/40 dark:border-cream-300/15 rounded-sm cursor-zoom-in group/slide shadow-md flex items-center justify-center"
+                  >
+                    {!imgErrors[activeSlide] ? (
+                      <ZoomableImage
+                        src={currentMedia[activeSlide].url}
+                        alt={`${project.title} Manual Page ${activeSlide + 1}`}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    ) : (
+                      <div className="p-4 text-center font-mono text-[9px] text-olive-500/60 dark:text-cream-200/45 flex flex-col justify-center h-full">
+                        <div>MANUAL_0{activeSlide + 1}</div>
+                      </div>
+                    )}
+                    
+                    <div className="absolute top-2 left-2 p-1 rounded bg-olive-800/80 text-cream-200 opacity-0 group-hover/slide:opacity-100 transition-opacity z-20 pointer-events-none">
+                      <Eye size={12} />
+                    </div>
+
+                    {/* Controls */}
+                    <div className="absolute inset-y-0 top-1/2 -translate-y-1/2 flex justify-between px-2 w-full z-20 pointer-events-none">
+                      <button
+                        onClick={prevSlide}
+                        className="p-1 rounded border border-olive-500/30 dark:border-cream-200/10 bg-cream-200/85 dark:bg-olive-750/90 text-olive-500 dark:text-cream-200 hover:bg-olive-500 hover:text-cream-200 dark:hover:bg-cream-200 dark:hover:text-olive-550 transition-colors pointer-events-auto shadow-sm cursor-pointer"
+                        title="Previous"
+                      >
+                        <ChevronLeft size={16} />
+                      </button>
+                      <button
+                        onClick={nextSlide}
+                        className="p-1 rounded border border-olive-500/30 dark:border-cream-200/10 bg-cream-200/85 dark:bg-olive-750/90 text-olive-500 dark:text-cream-200 hover:bg-olive-500 hover:text-cream-200 dark:hover:bg-cream-200 dark:hover:text-olive-550 transition-colors pointer-events-auto shadow-sm cursor-pointer"
+                        title="Next"
+                      >
+                        <ChevronRight size={16} />
+                      </button>
+                    </div>
+
+                    <div className="absolute bottom-2 right-2 px-2 py-0.5 rounded font-mono text-[8px] bg-olive-500/90 text-cream-200 dark:bg-cream-200 dark:text-olive-500 font-bold z-10">
+                      {String(activeSlide + 1).padStart(2, '0')} / {String(currentMedia.length).padStart(2, '0')}
+                    </div>
+                  </div>
+                )}
+
                 {layoutType === 'square' && (
                   // Square viewport for social media post snaps - object-contain ensures NO text is cut off
                   <div
@@ -529,15 +597,17 @@ function ProjectCard({ project, idx, onZoom }) {
               </div>
 
               {/* Caption & Explanation */}
-              <div className="p-3 border border-olive-200/35 dark:border-cream-200/10 bg-cream-100/60 dark:bg-olive-850/40 rounded text-left">
-                <div className="font-mono text-[10px] font-bold text-olive-500 dark:text-cream-100 uppercase tracking-wider mb-1 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-olive-500 dark:bg-cream-200"></span>
-                  {currentMedia[activeSlide].caption}
+              {activeTab !== 'manual' && (
+                <div className="p-3 border border-olive-200/35 dark:border-cream-200/10 bg-cream-100/60 dark:bg-olive-850/40 rounded text-left">
+                  <div className="font-mono text-[10px] font-bold text-olive-500 dark:text-cream-100 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-olive-500 dark:bg-cream-200"></span>
+                    {currentMedia[activeSlide].caption}
+                  </div>
+                  <p className="text-xs text-olive-500/90 dark:text-cream-200/95 font-sans leading-relaxed">
+                    {currentMedia[activeSlide].description}
+                  </p>
                 </div>
-                <p className="text-xs text-olive-500/90 dark:text-cream-200/95 font-sans leading-relaxed">
-                  {currentMedia[activeSlide].description}
-                </p>
-              </div>
+              )}
 
               {/* Thumbnails strip */}
               <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-thin scrollbar-thumb-olive-300 dark:scrollbar-thumb-cream-300">
@@ -546,7 +616,7 @@ function ProjectCard({ project, idx, onZoom }) {
                     key={sIdx}
                     onClick={() => setActiveSlide(sIdx)}
                     className={`relative rounded-sm overflow-hidden bg-cream-200 dark:bg-olive-900/30 flex-shrink-0 transition-all ${
-                      layoutType === 'portrait' ? 'w-8 border-2 aspect-[9/16]' : 'w-12 border aspect-square'
+                      layoutType === 'portrait' || layoutType === 'manual' ? 'w-8 border-2 aspect-[9/16]' : 'w-12 border aspect-square'
                     } ${
                       activeSlide === sIdx
                         ? 'border-olive-500 dark:border-cream-200 ring-1 ring-olive-500 dark:ring-cream-200'
@@ -571,7 +641,7 @@ function ProjectCard({ project, idx, onZoom }) {
             </div>
           )}
 
-          {/* Embedded YouTube video player (Tatak Pancho) */}
+          {/* Embedded YouTube video player (Tatak Pancho or Enervisio) */}
           {activeTab === 'video' && project.videoUrl && (
             <div className="relative aspect-video border border-olive-200/40 dark:border-cream-200/10 overflow-hidden bg-cream-200/60 dark:bg-olive-900/40 rounded">
               <iframe

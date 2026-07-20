@@ -13,6 +13,13 @@ import en9 from '../assets/Enervisio/web/EN9.png';
 import en10 from '../assets/Enervisio/web/EN10.png';
 import en11 from '../assets/Enervisio/web/EN11.png';
 
+// Import Enervisio Mobile Manual Snaps
+import mob1 from '../assets/Enervisio/mobile/1.png';
+import mob2 from '../assets/Enervisio/mobile/2.png';
+import mob3 from '../assets/Enervisio/mobile/3.png';
+import mob4 from '../assets/Enervisio/mobile/4.png';
+import mob5 from '../assets/Enervisio/mobile/5.png';
+
 // Import AMY 2025 snaps
 import amyLit from '../assets/AMY2025/AMYLit.jpg';
 import amyNu from '../assets/AMY2025/AMYNU.jpg';
@@ -67,7 +74,8 @@ export const portfolioData = {
       tagline: "Smart Socket with AI-Driven Energy Monitoring",
       roles: ["Full-Stack Software Engineer", "System Architect", "Project Manager", "Researcher"],
       description: "Built a comprehensive web, mobile, and IoT energy monitoring system integrating ESP32 smart socket hardware. Developed real-time monitoring, energy cost estimation, AI-driven insights, RBAC, and export/reporting workflows.",
-      webDescription: "A central administration web dashboard strictly for Electroline Corporation (ELCOR) usage. It handles manual Meralco rate updates, user dissemination control (RBAC), and monitors employee audit logs and faulty socket logs.",
+      videoUrl: "https://www.youtube.com/watch?v=dfMcYboG-4s",
+      webDescription: "A central administration web dashboard strictly for Electroline Corporation (ELCOR) usage. It handles manual Meralco rate updates, user dissemination control (RBAC), and monitors employee audit logs and faulty socket logs. (Note: The data displayed in these screenshots are dummy data and do not represent the official data encoded on the web dashboard; they are just representations of what the web admin can do.)",
       mobileDescription: "A consumer companion mobile app that pairs with IoT smart sockets, enabling end-users to toggle device power, track active energy consumption (in kWh and PHP), and interact with an AI conservation coach.",
       amyDescription: "Showcasing Enervisio AI's presentation at the AMY Innovation Awards 2025. This project was honored as a National Innovation Finalist before panels of tech developers, system engineers, and venture capital judges.",
       achievements: ["Recognized as an AMY Innovation Awards 2025 Finalist."],
@@ -130,25 +138,12 @@ export const portfolioData = {
           description: "Aggregates socket reports sent by active IoT consumers. Enables ELCOR workers to see which socket is faulty and coordinate repair visits."
         }
       ],
-      mobileMedia: [
-        {
-          url: "", // Placeholder visual rendered in React
-          type: "consumption",
-          caption: "Live Power Tracking (kWh & Peso)",
-          description: "Enables household consumers to view their active load drawn in kilowatt-hours and maps it directly to live Meralco rates in Philippine Peso (PHP)."
-        },
-        {
-          url: "",
-          type: "control",
-          caption: "Smart Socket IoT Controls",
-          description: "Gives users remote control over active ESP32 smart sockets. Features a single-tap toggle power state and automated scheduling limits."
-        },
-        {
-          url: "",
-          type: "ai",
-          caption: "AI Energy Assistant Chat",
-          description: "Connects consumers to an LLM coach that analyzes historical household loads, predicts bill costs, and replies with custom conservation tips."
-        }
+      manualMedia: [
+        { url: mob1, caption: "User Manual - Page 1" },
+        { url: mob2, caption: "User Manual - Page 2" },
+        { url: mob3, caption: "User Manual - Page 3" },
+        { url: mob4, caption: "User Manual - Page 4" },
+        { url: mob5, caption: "User Manual - Page 5" }
       ],
       amyMedia: [
         {
