@@ -26,9 +26,9 @@ export default function Hero({ content }) {
 
   // Map titles to custom descriptions to highlight them as core identities
   const identitiesMap = {
-    "Full-Stack Developer": "Building comprehensive web, mobile, and IoT systems integrating modern frameworks, secure database designs, and reactive user experiences.",
-    "Researcher": "Investigating technical and operational problems, producing academic publications, and presenting developments in systems integration and IoT.",
-    "AI Trainer/Annotator": "Evaluating LLM outputs for prompt-adherence, code accuracy, and multilingual nuances. Constructing instruction datasets for RLHF and SFT alignment."
+    "Full-Stack Software Engineer": "Designing and building robust web, mobile, and IoT systems with a focus on scalable software architecture, clean code, and user experience. Experienced in technical project management and agile workflows.",
+    "Researcher": "Investigating complex technical and operational problems, publishing systems integration research, and presenting findings at national academic forums.",
+    "AI Trainer & Annotator": "Evaluating LLM responses, refining prompts, and reviewing code output for technical accuracy. Specializing in RLHF/SFT alignment, tagger/evaluator pipelines, and multilingual validation."
   };
 
   // Map subtitles to custom highlights
@@ -97,7 +97,7 @@ export default function Hero({ content }) {
         <div className="md:col-span-8 space-y-4 text-left font-sans">
           <div className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-olive-500/60 dark:text-cream-200/50 border border-olive-200/30 dark:border-cream-200/10 px-2 py-0.5 rounded-full bg-cream-300/20 dark:bg-olive-750/30">
             <span className="w-1.5 h-1.5 rounded-full bg-olive-500 dark:bg-cream-200 animate-pulse"></span>
-            Graduate &bull; Developer &bull; Researcher
+            Software Engineer &bull; Researcher &bull; AI Specialist
           </div>
           
           <h2 className="text-2xl md:text-3.5xl lg:text-4xl font-bold tracking-tight leading-none text-olive-500 dark:text-cream-200">
@@ -105,7 +105,7 @@ export default function Hero({ content }) {
           </h2>
           
           <p className="text-sm text-olive-500/80 dark:text-cream-200/70 leading-relaxed max-w-xl">
-            I am an IT graduate with 900+ logged internship hours across corporate IT systems and software agencies. I co-led AWS cloud communities and student societies, conducting workshops and publishing system integration research.
+            I am a Software Engineer, Systems Researcher, and AI Trainer/Annotator with 4+ years of hands-on experience across corporate IT internships, cloud leadership, and academic projects. Leveraging deep proficiency in advanced prompt engineering and developer AI tools (such as Claude Code, Antigravity, and OpenAI Codex), I rapidly build scalable applications, evaluate LLM outputs for technical accuracy, and automate complex workflows.
           </p>
 
           <div className="flex gap-4 pt-2">

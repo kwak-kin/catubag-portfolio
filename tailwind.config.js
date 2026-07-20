@@ -22,7 +22,7 @@ export default {
           200: '#cedbc1',
           300: '#aac195',
           400: '#84a269',
-          500: '#67764d', // Primary accent/text (olive green)
+          500: '#3b442b', // Primary accent/text (olive green)
           600: '#515e3c',
           700: '#3e482f',
           750: '#333b26', // Custom dark olive

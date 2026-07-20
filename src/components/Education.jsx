@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Award, Wrench, Settings, Brain, BookOpen, Database } from 'lucide-react';
+import { GraduationCap, Award, Wrench, Settings, Brain, BookOpen, Database, Bot } from 'lucide-react';
 
 export default function Education({ content }) {
   const { personal, skills } = content;
@@ -105,6 +105,27 @@ export default function Education({ content }) {
               </div>
             </div>
           </div>
+
+          {/* AI-Assisted Development */}
+          {skills.ai_assisted_dev && (
+            <div className="border border-olive-200/40 dark:border-cream-200/10 rounded p-5 bg-cream-100/30 dark:bg-olive-800/5 flex flex-col justify-between">
+              <div>
+                <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-olive-500/85 dark:text-cream-200/80 flex items-center gap-1.5 border-b border-olive-200/20 dark:border-cream-200/5 pb-2 mb-3">
+                  <Bot size={12} /> AI-Assisted Development
+                </h5>
+                <div className="flex flex-wrap gap-1.5">
+                  {skills.ai_assisted_dev.map((aiDev, adIdx) => (
+                    <span
+                      key={adIdx}
+                      className="font-mono text-[10px] px-2 py-0.5 border border-olive-200/30 dark:border-cream-200/10 rounded bg-cream-200/50 dark:bg-olive-800/35 text-olive-500 dark:text-cream-100 hover:-translate-y-0.5 transition-transform"
+                    >
+                      {aiDev}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* AI Annotating & Evaluation */}
           <div className="border border-olive-200/40 dark:border-cream-200/10 rounded p-5 bg-cream-100/30 dark:bg-olive-800/5 flex flex-col justify-between">

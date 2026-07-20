@@ -8,7 +8,7 @@ const cleanLink = (url) => {
   return match ? match[1] : url;
 };
 
-export default function Sidebar({ theme, toggleTheme, content }) {
+export default function Sidebar({ theme, toggleTheme, content, sidebarOpen }) {
   const [copied, setCopied] = useState(false);
   const [activeSection, setActiveSection] = useState('intro');
 
@@ -84,7 +84,9 @@ export default function Sidebar({ theme, toggleTheme, content }) {
   ];
 
   return (
-    <aside className="w-full lg:w-80 lg:h-screen lg:fixed lg:top-0 lg:left-0 border-b lg:border-b-0 lg:border-r border-olive-200/40 dark:border-cream-200/10 flex flex-col justify-between p-6 lg:p-8 bg-cream-100/50 dark:bg-olive-600/35 backdrop-blur-sm z-30">
+    <aside className={`w-full lg:w-80 lg:h-screen lg:fixed lg:top-0 lg:left-0 border-b lg:border-b-0 lg:border-r border-olive-200/40 dark:border-cream-200/10 flex flex-col justify-between p-6 lg:p-8 bg-cream-100/50 dark:bg-olive-600/35 backdrop-blur-sm z-30 transition-transform duration-300 ${
+      sidebarOpen ? 'lg:translate-x-0' : 'lg:-translate-x-full'
+    }`}>
       
       {/* Top Section */}
       <div>
@@ -162,7 +164,7 @@ export default function Sidebar({ theme, toggleTheme, content }) {
         {/* Contact info */}
         <div className="space-y-2.5 text-xs font-mono text-left">
           <div className="flex items-center text-olive-500/70 dark:text-cream-200/60">
-            <MapPin size={14} className="mr-2 opacity-70" />
+            <MapPin size={14} className="mr-2 opacity-70 shrink-0" />
             <span className="leading-tight">{personal.location}</span>
           </div>
           

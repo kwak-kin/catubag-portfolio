@@ -21,6 +21,21 @@ export default function App() {
   });
 
   const [lightbox, setLightbox] = useState(null); // { items: [...], index: 0, layoutType: '...' }
+  const [sidebarOpen, setSidebarOpen] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('sidebarOpen');
+      return saved !== 'false';
+    }
+    return true;
+  });
+
+  const toggleSidebar = () => {
+    setSidebarOpen((prev) => {
+      const next = !prev;
+      localStorage.setItem('sidebarOpen', next ? 'true' : 'false');
+      return next;
+    });
+  };
 
   useEffect(() => {
     const root = document.documentElement;
@@ -101,13 +116,35 @@ export default function App() {
   const activeItem = lightbox ? lightbox.items[lightbox.index] : null;
 
   return (
-    <div className="min-h-screen w-full relative bg-cream-200 text-olive-500 transition-colors duration-300 dark:bg-olive-500 dark:text-cream-200 antialiased font-sans bg-dot-grid">
+    <div className="min-h-screen w-full relative bg-cream-200 text-olive-500 transition-colors duration-300 dark:bg-olive-900 dark:text-cream-200 antialiased font-sans bg-dot-grid">
       
+      {/* Sidebar Toggle Tab Button (visible only on large screens) */}
+      <button
+        onClick={toggleSidebar}
+        className="hidden lg:flex fixed top-6 z-40 items-center gap-1.5 px-3 py-1.5 border border-olive-500 bg-cream-100 hover:bg-cream-200 text-olive-500 dark:border-cream-200 dark:bg-olive-850 dark:hover:bg-olive-750 dark:text-cream-200 font-mono text-[10px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-brutalist dark:shadow-brutalist-cream rounded-r-sm"
+        style={{ left: sidebarOpen ? '320px' : '0px' }}
+        aria-label={sidebarOpen ? "Hide Sidebar Menu" : "Show Sidebar Menu"}
+      >
+        {sidebarOpen ? (
+          <>
+            <ChevronLeft size={14} />
+            <span>Hide Menu</span>
+          </>
+        ) : (
+          <>
+            <ChevronRight size={14} />
+            <span>Show Menu / Profile</span>
+          </>
+        )}
+      </button>
+
       {/* Sidebar Panel */}
-      <Sidebar theme={theme} toggleTheme={toggleTheme} content={content} />
+      <Sidebar theme={theme} toggleTheme={toggleTheme} content={content} sidebarOpen={sidebarOpen} />
 
       {/* Main Content Area */}
-      <main className="lg:ml-80 min-h-screen flex flex-col justify-between">
+      <main className={`transition-all duration-300 min-h-screen flex flex-col justify-between ${
+        sidebarOpen ? 'lg:ml-80' : 'lg:ml-0'
+      }`}>
         
         {/* Sections Container */}
         <div className="w-full max-w-4xl mx-auto px-6 py-8 md:px-12 md:py-12 lg:py-16 space-y-12">

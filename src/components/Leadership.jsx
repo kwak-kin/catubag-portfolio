@@ -108,7 +108,7 @@ export default function Leadership({ content, onZoom }) {
                             speak.media.map(m => ({
                               url: m.url,
                               caption: speak.topic,
-                              description: m.caption || `${speak.event} - Slide #${iIdx + 1}`
+                              description: ""
                             })),
                             iIdx,
                             'square'
