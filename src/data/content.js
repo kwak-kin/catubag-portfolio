@@ -213,12 +213,12 @@ export const portfolioData = {
     {
       company: "Outlier AI",
       role: "AI Trainer / Freelance AI Annotator",
-      period: "January 2025 - Present",
+      period: "January 2025 – May 2026",
       location: "Remote",
       bullets: [
         "Conduct comprehensive evaluations of AI-generated outputs across various modalities, ensuring prompt adherence and factual correctness.",
         "Analyze model responses to determine their effectiveness in meeting user intent and providing meaningful results.",
-        "Complete bilingual annotation tasks, leveraging cultural nuances to enhance localized AI evaluation.",
+        "Complete English, Tagalog, and bilingual Tagalog-English annotation tasks, applying language-specific and cultural judgment for localized AI evaluation.",
         "Review code across multiple programming languages, ensuring technical accuracy and practical utility for end-users."
       ]
     },
@@ -231,6 +231,7 @@ export const portfolioData = {
         "Contributed to multiple e-commerce platforms using React, Laravel 11, PostgreSQL, GitHub, Docker, and SMTP email verification.",
         "Guided AI coding agents through high-level architectural prompting to implement robust role-based access control and seamless transaction processes.",
         "Designed and optimized critical components like the homepage, shopping cart, and admin management workflows.",
+        "Provided manual QA testing for features while simultaneously also contributing as a developer",
         "Documented development processes to facilitate team understanding and future enhancements."
       ]
     },
@@ -240,9 +241,10 @@ export const portfolioData = {
       period: "Nov 2025 - Feb 2026",
       location: "Sta. Maria, Bulacan",
       bullets: [
-        "Engineered a standalone Condition-Based Maintenance System utilizing a pure PHP and MariaDB stack.",
-        "Utilized developer AI tools to accelerate the coding of essential modules for equipment tracking and maintenance scheduling.",
+        "Developed a standalone Condition-Based Maintenance System designed to digitize maintenance planning, equipment tracking, attendance logs, and reporting workflows.",
+        "Built core modules using PHP, MariaDB/MySQL, and Bootstrap, including personnel management, equipment records, preventive maintenance scheduling, and condition-based maintenance monitoring.",
         "Automated data reporting and attendance calculations, significantly improving operational efficiency.",
+        "Provided manual QA testing for features while simultaneously also being the sole system developer",
         "Created detailed documentation to support ongoing development and team comprehension of the system."
       ]
     }
@@ -316,11 +318,12 @@ export const portfolioData = {
   ],
 
   skills: {
+    qa_testing: ["Manual Testing", "Test Case Design", "Regression Testing", "Bug Reporting", "Defect Tracking", "UAT", "Sprint-Based QA", "Bug Lifecycle Management"],
     ai_assisted_dev: ["Agentic Workflows", "Advanced Prompt Engineering", "Google Antigravity", "Claude Code", "OpenAI Codex"],
     ai_training: ["LLM evaluation", "prompt writing", "response ranking", "instruction-following assessment", "SFT/RLHF task familiarity", "bilingual Tagalog-English annotation", "multimodal annotation", "AI coding evaluation", "data labeling", "quality validation"],
     languages: ["Filipino/Tagalog (Native)", "English (C2 Proficient)"],
     programming: ["Software Architecture", "PHP", "JavaScript", "HTML", "CSS", "Laravel", "Livewire", "React.js", "Flutter", "Node.js", "Express.js", "Bootstrap", "Tailwind CSS"],
     databases_cloud: ["MySQL", "MariaDB", "Firebase Firestore", "PostgreSQL", "AWS", "Docker"],
-    tools: ["Technical Project Management", "Git", "GitHub", "VS Code", "Cursor", "GitHub Copilot", "XAMPP", "Figma", "Trello", "Notion"]
+    tools: ["Technical Project Management", "Git", "GitHub", "VS Code", "Cursor", "GitHub Copilot", "XAMPP", "Figma", "Trello", "Notion", "Zoho Sprints", "Jira"]
   }
 };
